@@ -1,0 +1,130 @@
+
+@active-color: blue;
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+  
+  
+  }
+  
+  body{
+    font-family: "Montserrat", sans-serif;
+  }
+
+  header {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../img/bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  nav {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo{
+    width: 90px;
+    margin-left:20px;
+  }
+
+  .bar-btn{
+    font-size: 25px;
+    color: darkslategray;
+    margin-right: 20px;
+    cursor: pointer;
+  }  
+
+  .nav-menu {
+    position: fixed;
+    width: 100%;
+    height:0vh;
+    top: 100px;
+    background: rgba(0, 0, 0, .95);
+    text-align: center;
+    transition: all .5s;
+
+    li{
+        display:none;
+        line-height:50px;
+        margin: 5px 0;
+        transition: all .5s;
+        a {
+            color: #fff;
+            font-size: 16px;
+            text-transform: uppercase;
+            font-weight: 600;
+
+
+          }
+          a:hover{
+            color: rgb(248, 8, 8);
+            transition: .3s;
+          }
+                      
+          a.active{
+            color: rgb(248, 8, 8);
+            transition: .3s;
+        }
+      }
+      
+  }
+
+  #check {
+    display: none;
+  }
+  
+  #check:checked ~ .nav-menu {
+    height: 100vh;
+  }
+  
+  #check:checked ~ .nav-menu li {
+  display:block;
+  }
+  
+
+  //VERSION ESCRITORIO:
+  @media screen and (min-width: 768px){
+    .logo{
+      margin-left:50px;
+    }
+  
+    nav{
+      height: 100px;
+  
+    }
+  
+    .bar-btn{
+      display:none
+    }
+    
+    .nav-menu{
+      position: relative;
+      height: 100px;
+      top: 0;
+      background: none;
+      transition: none;
+      text-align: center;
+      li{
+        display:inline-block;
+        line-height: 100px;
+        margin: 0, 2px;
+        transition: none;
+        a {
+            font-size: 17px;
+            margin: 0 10px;
+          }
+      }
+  
+    }
+  }
+
+ 

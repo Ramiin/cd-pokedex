@@ -8,7 +8,7 @@ export default function Searchbar(props) {
   let [search, setSearch] = useState("");
 
   function handleChange(e) {
-    setSearch(e.target.value);
+    setSearch(e.target.value.toLowerCase());
   }
 
   function handleSubmit(e) {

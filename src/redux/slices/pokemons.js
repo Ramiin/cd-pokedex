@@ -7,6 +7,7 @@ export const pokemonSlice = createSlice({
         allPokemon: [],
         allPokemonBackup:[],
         uniquePokemon:{},
+        resumePokemon:'',
         allTypes: []
     },
     reducers: {
@@ -30,10 +31,13 @@ export const pokemonSlice = createSlice({
         setSearchedPokemon: (state, action) =>{
             state.allPokemon = [action.payload]
         },
+        setResume: (state, action) =>{
+            state.resumePokemon = action.payload
+        },
     }
 });
 
-export const {setUniquePokemon, clearActualPokemon, setAllTypes, setAllPokemons, clearPokemons, setSearchedPokemon} = pokemonSlice.actions
+export const {setUniquePokemon, clearActualPokemon, setAllTypes, setAllPokemons, clearPokemons, setSearchedPokemon,setResume} = pokemonSlice.actions
 
 export default pokemonSlice.reducer;
 
@@ -83,5 +87,24 @@ export const searchPokemon = (pokemon)=>{
     return async (dispatch)=>{
         let pokeSearched = (await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)).data
         dispatch(setSearchedPokemon(pokeSearched))
+    }
+}
+
+export const chargeInfoPokemon = (pokemon)=>{
+    return async (dispatch)=>{
+        let dataPokemon = (await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)).data
+        dispatch(setUniquePokemon(dataPokemon))
+    }
+}
+
+export const chargeResume = (pokemon)=>{
+    return async (dispatch)=>{
+        let pokemonsData = (await axios.get(`https://pokeapi.co/api/v2/pokemon-species/${pokemon}`)).data
+        let pokemonsResume=  pokemonsData.flavor_text_entries[0].flavor_text
+
+            dispatch(setResume(pokemonsResume))
+
+        
+
     }
 }

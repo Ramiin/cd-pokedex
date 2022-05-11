@@ -70,6 +70,7 @@ header {
 .card .poke-img-container img {
   max-width: 220px;
   max-height: 220px;
+  cursor: pointer;
   filter: drop-shadow(2px 2px 4px #222);
 }
 .card .info {
@@ -312,7 +313,7 @@ nav {
 }
 .bar-btn {
   font-size: 25px;
-  color: darkslategray;
+  color: white;
   margin-right: 20px;
   cursor: pointer;
 }

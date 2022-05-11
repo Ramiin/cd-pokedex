@@ -2,12 +2,12 @@ import React from "react";
 
 export default function PokeCard(props) {
 
-  let { image, name, hp, experience, attack, special, defense } = props.pokemon;
+  let { id, image, name, hp, experience, attack, special, defense } = props.pokemon;
   return (
     <>
       <div className="card">
             <div className="poke-img-container">
-            <img src={image} alt={name} />
+            <img src={image} alt={name} onClick={()=>{window.location.href=`/details/${id}`}}/>
             </div>
             <div className="info">
             <h1>{name}</h1>

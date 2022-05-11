@@ -27,10 +27,13 @@ export const pokemonSlice = createSlice({
             state.allPokemon = []
             state.allPokemonBackup = []
         },
+        setSearchedPokemon: (state, action) =>{
+            state.allPokemon = [action.payload]
+        },
     }
 });
 
-export const {setUniquePokemon, clearActualPokemon, setAllTypes, setAllPokemons, clearPokemons} = pokemonSlice.actions
+export const {setUniquePokemon, clearActualPokemon, setAllTypes, setAllPokemons, clearPokemons, setSearchedPokemon} = pokemonSlice.actions
 
 export default pokemonSlice.reducer;
 
@@ -73,5 +76,12 @@ export const chargeAllTypes = ()=>{
     return async (dispatch)=>{
         let pokemon = (await axios.get(`https://pokeapi.co/api/v2/type/`)).data
         dispatch(setUniquePokemon(pokemon))
+    }
+}
+
+export const searchPokemon = (pokemon)=>{
+    return async (dispatch)=>{
+        let pokeSearched = (await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)).data
+        dispatch(setSearchedPokemon(pokeSearched))
     }
 }

@@ -35,7 +35,7 @@ export default function Home() {
   return (
     <>
       <section className="container">
-        <Searchbar currentPage={currentPage}/>
+        <Searchbar setPagina={setPagina}/>
       </section>
 
       <section>
@@ -50,6 +50,7 @@ export default function Home() {
       <section className="cards-container">
         {currentPokemons?.map((el) => {
           let dataToRender = {
+            id: el.id,
             image: el.sprites.other["official-artwork"].front_default,
             name: el.name,
             hp: el.stats[0].base_stat,

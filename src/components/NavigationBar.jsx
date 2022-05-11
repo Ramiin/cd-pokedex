@@ -1,8 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-
-import NavigationBar from "./NavigationBar";
 import "../utils/css/Global.css";
-import LandingPage from "./LandingPage";
 import logo from '../utils/img/logo.png'
 
 export default function First(){
@@ -32,9 +29,8 @@ return (
            <ul className="nav-menu">
             <li><NavLink to="/" > Home</NavLink></li>
             <li><NavLink to="/home" >Get started</NavLink></li>
-            {/* <li><NavLink to="#" >About me</NavLink></li>
-            <li><NavLink to="#" ></NavLink></li>
-            <li><NavLink to="#" ></NavLink></li> */}
+            <li><NavLink to="/about" >About me</NavLink></li>
+            
            </ul>
            
        </nav>

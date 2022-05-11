@@ -37,6 +37,22 @@ header {
     margin: auto;
 }
 
+.float-container{
+    position: absolute;
+    bottom: 25px;
+    right: 30px;
+    a{
+        background-color: orange;
+        border-radius: 15px;
+        transition: 300ms;
+        color: white;
+        padding: 10px;
+    }
+    a:hover{
+        background-color: rgb(255, 183, 48);
+    }
+}
+
 .half{
     display: flex;
     flex-direction: row;
@@ -379,6 +395,7 @@ background-color:black;
     width: 90%;
     background-color: transparent;
 
+
     .img-details {
         display: flex;
         align-items: center;
@@ -394,7 +411,6 @@ background-color:black;
             max-height: 370px;
             margin: 10px;
             filter: drop-shadow(2px 2px 4px #222);
-
             z-index: 2;
         }
     }

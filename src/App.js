@@ -6,6 +6,7 @@ import "./utils/css/Global.css";
 import "./utils/css/Global.css";
 import LandingPage from "./components/LandingPage";
 import PokeCard from "./components/PokeCard";
+import Home from "./components/Home";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <div className="main-container">
           <Routes>
             <Route path="/" element={<LandingPage />} />
+            <Route path="/home" element={<Home />} />
             <Route path="/card" element={<PokeCard />} />
 
             {/* </Route> */}

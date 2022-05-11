@@ -1,19 +1,25 @@
-import React from 'react'
+import React from "react";
 
+export default function PokeCard(props) {
 
-export default function PokeCard(){
-    return (
-        <>
+  let { image, name, hp, experience, attack, special, defense } = props.pokemon;
+  return (
+    <>
+      <div className="card">
+            <div className="poke-img-container">
+            <img src={image} alt={name} />
+            </div>
+            <div className="info">
+            <h1>{name}</h1>
 
-        <div className="card">
-        <div className="info">
-            <h1>hola</h1>
-        </div>
-        </div>
-
-        
-
-
-        </>
-    )
+            <p>Health: {hp}</p>
+            <p>Attack: {attack}</p>
+            <p>Defense: {defense}</p>
+            <p>Experience: {experience}</p>
+            <p>Special: {special}</p>
+            <p>{}</p>
+            </div>
+      </div>
+    </>
+  );
 }

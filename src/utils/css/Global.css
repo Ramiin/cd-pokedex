@@ -87,6 +87,7 @@ header {
   z-index: 0;
 }
 .card .info h1 {
+  text-align: center;
   margin: 0px 0px 35px 0px;
 }
 .card .info p {
@@ -119,6 +120,7 @@ header {
   padding: 10px;
   border-radius: 10px 0px 0px 10px;
   border: none;
+  box-shadow: 0px 0px 3px black;
 }
 .searchbar input::placeholder {
   font-family: 'Montserrat', sans-serif;
@@ -140,6 +142,7 @@ header {
   border: none;
   cursor: pointer;
   transition: 300ms;
+  box-shadow: 0px 0px 3px black;
   border-radius: 0px 10px 10px 0px;
   position: relative;
   width: fit-content;
@@ -147,6 +150,130 @@ header {
 }
 .searchbar button:hover {
   background-color: #08d415;
+}
+.pagination {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+}
+.pagination li {
+  padding: 3px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+}
+.pagination li a {
+  box-shadow: 1px 1px 3px black;
+}
+.pagination li a.first {
+  height: 40px;
+  min-width: 100px;
+  max-width: fit-content;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #02a70d;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: 300ms;
+  padding: 7px;
+  border: 1px solid #141414;
+  border-radius: 15px 0px 0px 15px;
+  height: 35px;
+  width: 120px;
+  color: white;
+  font-weight: 300;
+  background-color: rgba(34, 34, 34, 0.9);
+  margin: auto;
+}
+.pagination li a.second {
+  height: 40px;
+  min-width: 100px;
+  max-width: fit-content;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #02a70d;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: 300ms;
+  padding: 7px;
+  border: 1px solid #141414;
+  border-radius: 0px 15px 15px 0px;
+  height: 35px;
+  width: 120px;
+  color: white;
+  font-weight: 300;
+  background-color: rgba(34, 34, 34, 0.9);
+  margin: auto;
+}
+.pagination li a.disabled {
+  height: 40px;
+  min-width: 100px;
+  max-width: fit-content;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #02a70d;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: 300ms;
+  padding: 7px;
+  border: 1px solid #141414;
+  height: 35px;
+  width: 120px;
+  font-weight: 300;
+  margin: auto;
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  cursor: default;
+}
+.pagination li a.disabled:hover {
+  height: 40px;
+  min-width: 100px;
+  max-width: fit-content;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #02a70d;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: 300ms;
+  padding: 7px;
+  border: 1px solid #141414;
+  height: 35px;
+  width: 120px;
+  font-weight: 300;
+  margin: auto;
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  cursor: default;
+}
+.pagination li a:hover {
+  border: 1px solid #900202;
+  background-color: #f80808;
+}
+.pagination li input {
+  display: flex;
+  font-family: 'Montserrat', sans-serif;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  padding: 5px;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 3px black;
 }
 .app-container {
   position: fixed;

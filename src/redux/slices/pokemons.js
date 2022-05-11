@@ -23,10 +23,14 @@ export const pokemonSlice = createSlice({
             state.allPokemon = action.payload
             state.allPokemonBackup = action.payload
         },
+        clearPokemons: (state, action) =>{
+            state.allPokemon = []
+            state.allPokemonBackup = []
+        },
     }
 });
 
-export const {setUniquePokemon, clearActualPokemon, setAllTypes, setAllPokemons} = pokemonSlice.actions
+export const {setUniquePokemon, clearActualPokemon, setAllTypes, setAllPokemons, clearPokemons} = pokemonSlice.actions
 
 export default pokemonSlice.reducer;
 
@@ -50,6 +54,12 @@ export const chargeAllPokemons = (offset, limit)=>{
         })
         
 
+    }
+}
+
+export const clearAllPokemons = ()=>{
+    return (dispatch)=>{
+        dispatch(clearPokemons())
     }
 }
 

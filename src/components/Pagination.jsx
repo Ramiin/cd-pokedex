@@ -1,41 +1,55 @@
-import React from 'react'
+import React from "react";
 
 export default function Pgination(props) {
-  let isFirstPage = props.currentPage === 1 ? 'disabled' : ''
+  let isFirstPage = props.currentPage === 1 ? "disabled" : "";
   let isLastPage =
-    props.currentPage === Math.ceil(props.totalCards / props.cardsInPage)
-      ? 'disabled'
-      : ''
+    props.currentPage === Math.ceil(props.totalPokemons / props.cardsInPage)
+      ? "disabled"
+      : "";
 
-  let { currentPage, setPagina } = props
+  let { currentPage, setPagina } = props;
+
+  function setActualPage(number) {
+    if((number>=188)){
+      setPagina(187);
+
+    }
+    else if ((number <= 0)) {
+      setPagina(1);
+
+    }
+    else{
+      setPagina(number);
+
+    }
+  }
 
   return (
-    <nav aria-label='Page navigation'>
-      <ul className='pagination justify-content-center'>
-        <li className={`page-item ${isFirstPage}`}>
+    <div>
+      <ul className="pagination">
+        <li>
           <a
-            href='#'
-            className='page-link'
-            onClick={() => setPagina(currentPage - 1)}
-            tabIndex='-1'>
-            Anterior
+            href="#"
+            className={`first ${isFirstPage}`}
+            onClick={() => setActualPage(currentPage - 1)}
+          >
+            Previous
           </a>
         </li>
+        <li>
+          <input type="text" onChange={(e)=> setActualPage(parseInt(e.target.value))} />
+        </li>
 
-        <li className={`page-item ${isLastPage}`}>
+        <li>
           <a
-            href='#'
-            className='page-link'
-            onClick={() => setPagina(currentPage + 1)}>
-            Siguiente
+            href="#"
+            className={`second ${isLastPage}`}
+            onClick={() => setActualPage(currentPage + 1)}
+          >
+            Next
           </a>
         </li>
       </ul>
-      <div className='pagination justify-content-center'>
-        <p>
-          {currentPage} de {Math.ceil(props.totalCards / props.cardsInPage)}
-        </p>
-      </div>
-    </nav>
-  )
+    </div>
+  );
 }

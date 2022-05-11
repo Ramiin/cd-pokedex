@@ -25,6 +25,21 @@ header {
   color: darkslategray;
   margin: auto;
 }
+.float-container {
+  position: absolute;
+  bottom: 25px;
+  right: 30px;
+}
+.float-container a {
+  background-color: orange;
+  border-radius: 15px;
+  transition: 300ms;
+  color: white;
+  padding: 10px;
+}
+.float-container a:hover {
+  background-color: #ffb730;
+}
 .half {
   display: flex;
   flex-direction: row;

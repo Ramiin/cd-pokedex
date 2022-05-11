@@ -8,7 +8,7 @@ export default function Searchbar() {
         <input
           type="text"
           id="searchbar"
-          placeholder="Search by Pokemon name"
+          placeholder="Search pokemon by name.."
         />
         <button type="submit">🔍</button>
         <Link to='#'><p style={{margin: '5px'}}>Refresh all</p></Link>

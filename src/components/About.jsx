@@ -12,7 +12,7 @@ export default function About() {
                 src={Ozqui}
                 alt="Ozcar Rdz"
                 className="about"
-                style={{ borderRadius: "50%", maxHeight: "250px!important" }}
+                style={{borderRadius: "50%", width: "100px!important" }}
               />
             </div>
             <div className="info-details" style={{minHeight:'550px'}}>
@@ -28,7 +28,7 @@ export default function About() {
                 <p>POKEMON API</p>
 
               </div>
-              <div className="half" style={{marginTop:'30px'}}>
+              <div className="half" style={{marginTop:'0px'}}>
                 <div className="types-list">
                   <h3>TYPES</h3>
 

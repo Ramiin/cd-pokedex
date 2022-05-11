@@ -8,8 +8,59 @@
 body {
   font-family: "Montserrat", sans-serif;
 }
+header {
+  position: sticky;
+  top: 0px;
+  z-index: 200;
+  background-color: rgba(34, 34, 34, 0.9);
+}
+.main-container {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 95%;
+  text-align: center;
+  color: darkslategray;
+  margin: 20px auto;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 95%;
+  text-align: center;
+  color: darkslategray;
+  margin: 20px auto;
+}
+.card {
+  min-width: 400px;
+  min-height: 400px;
+  max-width: 400px;
+  max-height: 400px;
+  background-color: white;
+}
+.btn-main {
+  height: 40px;
+  min-width: 100px;
+  max-width: fit-content;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #02a70d;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+}
+.btn-main:hover {
+  background-color: #08d415;
+}
 .app-container {
   position: fixed;
+  overflow: auto;
   width: 100%;
   height: 100vh;
   background-image: url(../img/bg.png);
@@ -82,9 +133,37 @@ nav {
 }
 #check:checked ~ .nav-menu {
   height: 100vh;
+  z-index: 100;
 }
 #check:checked ~ .nav-menu li {
   display: block;
+}
+.hero {
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+  width: 95%;
+  text-align: center;
+  color: darkslategray;
+  margin: auto;
+  background-color: #f5f5dc;
+  border-style: double;
+  padding: 30px;
+}
+.hero .btn-main {
+  padding: 15px;
+}
+.hero .main-message {
+  text-align: center;
+}
+.hero .main-message h1 {
+  margin-bottom: 10px;
+}
+.hero .main-message h4 {
+  margin-bottom: 30px;
 }
 @media screen and (min-width: 768px) {
   .logo {

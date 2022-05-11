@@ -1,22 +1,81 @@
 @active-color: rgb(248, 8, 8);
 @dark-color: darkslategray;
-@hero-bg: #F5F5DC;
+@hero-bg: rgb(245, 245, 220, .9);
+
 * {
     padding: 0;
     margin: 0;
     text-decoration: none;
     list-style: none;
     box-sizing: border-box;
-  
-  
-  }
-  
-  body{
-    font-family: "Montserrat", sans-serif;
-  }
+}
 
-  .app-container {
-    position:fixed;
+body {
+    font-family: "Montserrat", sans-serif;
+}
+
+header {
+    position: sticky;
+    top: 0px;
+    z-index: 200;
+    background-color: rgba(34, 34, 34, 0.9);
+}
+
+
+.main-container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 95%;
+    text-align: center;
+    color: @dark-color;
+    margin: 20px auto;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 95%;
+    text-align: center;
+    color: @dark-color;
+    margin: 20px auto;
+}
+
+.card {
+    min-width: 400px;
+    min-height: 400px;
+    max-width: 400px;
+    max-height: 400px;
+    background-color: white;
+
+    .info {}
+}
+
+.btn-main {
+    height: 40px;
+    min-width: 100px;
+    max-width: fit-content;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgb(2, 167, 13);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-main:hover {
+    background-color: rgb(8, 212, 21);
+}
+
+.app-container {
+    position: fixed;
+    overflow: auto;
     width: 100%;
     height: 100vh;
     background-image: url(../img/bg.png);
@@ -24,57 +83,60 @@
     background-position: center;
     background-size: cover;
     z-index: -100;
-  }
+}
 
-  nav {
+nav {
     height: 100px;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
-  }
+}
 
-  .logo{
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      font-size: 1.5rem;
-      color: @active-color;
-      text-shadow: 2px 2px 4px #222;
-    
-    img{
+.logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1.5rem;
+    color: @active-color;
+    text-shadow: 2px 2px 4px #222;
+
+    img {
         width: 4rem;
         margin: 0px 5px 0px 20px;
         filter: drop-shadow(2px 2px 4px #222);
     }
-    span{
+
+    span {
         color: white;
     }
 
-  }
+}
 
-  .bar-btn{
+
+.bar-btn {
     font-size: 25px;
     color: @dark-color;
     margin-right: 20px;
     cursor: pointer;
-  }  
+}
 
-  .nav-menu {
+.nav-menu {
     position: fixed;
     width: 100%;
-    height:0vh;
+    height: 0vh;
     top: 100px;
     background: rgba(0, 0, 0, .95);
     text-align: center;
     transition: all .5s;
 
-    li{
-        display:none;
-        line-height:50px;
+    li {
+        display: none;
+        line-height: 50px;
         margin: 5px 0;
         transition: all .5s;
+
         a {
             color: #fff;
             font-size: 16px;
@@ -82,67 +144,102 @@
             font-weight: 600;
 
 
-          }
-          a:hover{
-            color: @active-color;
-            transition: .3s;
-          }
-                      
-          a.active{
+        }
+
+        a:hover {
             color: @active-color;
             transition: .3s;
         }
-      }
-      
-  }
 
-  #check {
+        a.active {
+            color: @active-color;
+            transition: .3s;
+        }
+    }
+
+}
+
+#check {
     display: none;
-  }
-  
-  #check:checked ~ .nav-menu {
+}
+
+#check:checked~.nav-menu {
     height: 100vh;
-  }
-  
-  #check:checked ~ .nav-menu li {
-  display:block;
-  }
-  
+    z-index: 100;
+}
 
-  //VERSION ESCRITORIO:
-  @media screen and (min-width: 768px){
-    .logo{
-      margin-left:50px;
+#check:checked~.nav-menu li {
+    display: block;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+    width: 95%;
+    text-align: center;
+    color: @dark-color;
+    margin: auto;
+    background-color: @hero-bg;
+    border-style: double;
+    padding: 30px;
+
+    .btn-main {
+        padding: 15px;
     }
-  
-    nav{
-      height: 100px;
-  
+
+    .main-message {
+        text-align: center;
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        h4 {
+            margin-bottom: 30px;
+        }
     }
-  
-    .bar-btn{
-      display:none
+
+}
+
+
+//VERSION ESCRITORIO:
+@media screen and (min-width: 768px) {
+    .logo {
+        margin-left: 50px;
     }
-    
-    .nav-menu{
-      position: relative;
-      height: 100px;
-      top: 0;
-      background: none;
-      transition: none;
-      text-align: center;
-      li{
-        display:inline-block;
-        line-height: 100px;
-        margin: 0, 2px;
+
+    nav {
+        height: 100px;
+
+    }
+
+    .bar-btn {
+        display: none
+    }
+
+    .nav-menu {
+        position: relative;
+        height: 100px;
+        top: 0;
+        background: none;
         transition: none;
-        a {
-            font-size: 17px;
-            margin: 0 10px;
-          }
-      }
-  
-    }
-  }
+        text-align: center;
 
- 
+        li {
+            display: inline-block;
+            line-height: 100px;
+            margin: 0, 2px;
+            transition: none;
+
+            a {
+                font-size: 17px;
+                margin: 0 10px;
+            }
+        }
+
+    }
+}

@@ -37,7 +37,99 @@ header {
     margin: auto;
 }
 
+.half{
+    display: flex;
+    flex-direction: row;
+    .types-list{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 40%;
+    }
+    .about{
+        width: 60%;
+        h3{
+            margin-bottom: 5px;
+        }
+        p{
+            font-size: 12px;
+        }
+    }
+}
 
+.types {
+    margin: 5px;
+    width: 80px;
+    font-size: 12px;
+    padding: 2px 10px;
+    border-radius: 15px;
+    background-color: black;
+    color:white;
+    box-shadow: 2px 2px 4px #000000;
+}
+.normal{
+    background-color:#a9a878;
+}
+.fighting{
+    background-color:#c13129;
+}
+.flying{
+    background-color:#98a4e0;
+}
+
+.poison{
+ background-color: #bb5a9f;
+}
+
+.ground{
+    background-color: #e7d4a9;
+}
+.rock{
+background-color:#bea563;
+}
+.bug{
+    background-color: #a9bd42;
+}
+.ghost{
+    background-color:#6762b2;
+}
+.steel{
+    background-color: #afadc3;
+}
+.fire{
+background-color:#fe4833;
+}
+.water{
+    background-color:#1f93f6;
+}
+.grass{
+    background-color:#74d76a;
+}
+.electric{
+    background-color:#fec446;
+}
+.psychic{
+background-color:#fd6fa1;
+}
+.ice{
+background-color:#47cee4;
+}
+.dragon{
+background-color:#8567ed;
+}
+.dark{
+background-color:#765a4e;
+}
+.fairy{
+    background-color:#fdb6f2;
+}
+.unknown{
+background-color:black;
+}
+.shadow{
+background-color:black;
+}
 .container {
     display: flex;
     flex-direction: column;
@@ -102,7 +194,7 @@ header {
 
         h1 {
             text-align: center;
-            margin: 0px 0px 35px 0px;
+            margin: 10px 0px 35px 0px;
         }
 
         p {
@@ -180,13 +272,12 @@ header {
     width: 100%;
 
     li {
-        padding: 3px;
+        padding: 2px;
         display: flex;
         text-align: center;
         justify-content: center;
         width: 100%;
 
-        // padding: 5px;
         a {
             box-shadow: 1px 1px 3px black;
         }
@@ -252,12 +343,13 @@ header {
         }
 
         input {
-            display:flex;
-            font-family: 'Montserrat', sans-serif;;
+            display: flex;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
             justify-content: center;
             align-items: center;
-            width: 50px;
-            padding:5px;
+            width: 70px;
+            padding: 5px 5px 5px 15px;
             text-align: center;
             border: none;
             border-radius: 5px;
@@ -278,6 +370,65 @@ header {
     background-position: center;
     background-size: cover;
     z-index: -100;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    background-color: transparent;
+
+    .img-details {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0px;
+        max-height: 200px;
+
+        img {
+            position: relative;
+            bottom: -70px;
+            min-width: 392px;
+            max-width: 100%;
+            max-height: 370px;
+            margin: 10px;
+            filter: drop-shadow(2px 2px 4px #222);
+
+            z-index: 2;
+        }
+    }
+
+    .info-details {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        text-align: center;
+        top: 45px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 15px;
+        box-shadow: 4px 4px 10px black;
+        border-style: double;
+        margin-bottom: 100px;
+        width: 100%;
+        max-width: 700px;
+        height: 450px;
+        padding: 30px;
+        z-index: 0;
+
+        h1 {
+            font-size: 40px;
+            color:@dark-button;
+            position: relative;
+            margin-top: 60px;
+            text-shadow: 2px 2px 4px rgb(123, 123, 123);
+            z-index: 10000!important;
+        }
+
+        .info-stats {
+            margin: 20px 10px;
+        }
+    }
 }
 
 nav {

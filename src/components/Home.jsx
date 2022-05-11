@@ -44,6 +44,7 @@ export default function Home() {
           setPagina={setPagina}
           cardsInPage={cardsInPage}
           totalPokemons={1122}
+          currentPokemons={currentPokemons.length}
         />
       </section>
 

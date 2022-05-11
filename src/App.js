@@ -5,20 +5,20 @@ import NavigationBar from "./components/NavigationBar";
 import "./utils/css/Global.css";
 import "./utils/css/Global.css";
 import LandingPage from "./components/LandingPage";
+import PokeCard from "./components/PokeCard";
 
 function App() {
   return (
     <>
       <div className="app-container">
         <NavigationBar />
-        <Routes>
-            <Route exact path="/" element={<LandingPage />}>
-                {/* <Route path="home" element={<Home />} > */}
-                
-            </Route>
+        <div className="main-container">
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/card" element={<PokeCard />} />
+
+            {/* </Route> */}
           </Routes>
-        <div className="hero">
-          <h1>Holaaaa</h1>
         </div>
       </div>
     </>

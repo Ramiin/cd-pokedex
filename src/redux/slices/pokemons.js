@@ -5,22 +5,26 @@ export const pokemonSlice = createSlice({
     name: 'pokemons',
     initialState: {
         allPokemon: [],
-        uniquePokemon:[],
-        prueba: ''
+        uniquePokemon:{},
     },
     reducers: {
-        setMsgPrueba : (state, action)=>{
-            state.prueba = 'Funciona redux'
+        setUniquePokemon: (state, action)=>{
+            state.uniquePokemon = action.payload
         }
     }
 });
 
-export const {setMsgPrueba} = pokemonSlice.actions
+export const {setUniquePokemon} = pokemonSlice.actions
 
 export default pokemonSlice.reducer;
 
-export const setPrueba = (msj)=>{
-    return (dispatch)=>{
-        dispatch(setMsgPrueba(msj))
+export const setRandom = ()=>{
+    let min= 1;
+    let max= 1126;
+    let randomPoke= Math.floor(Math.random() * (max - min + 1) + min);
+
+    return async (dispatch)=>{
+        let pokemon = await axios.get(`https://pokeapi.co/api/v2/pokemon/${randomPoke}`).data
+        dispatch(setUniquePokemon(pokemon))
     }
 }

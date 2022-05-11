@@ -8,13 +8,15 @@
 body {
   font-family: "Montserrat", sans-serif;
 }
-header {
+.app-container {
+  position: fixed;
   width: 100%;
   height: 100vh;
   background-image: url(../img/bg.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  z-index: -100;
 }
 nav {
   height: 100px;
@@ -22,10 +24,23 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 1rem;
 }
 .logo {
-  width: 90px;
-  margin-left: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 1.5rem;
+  color: #f80808;
+  text-shadow: 2px 2px 4px #222;
+}
+.logo img {
+  width: 4rem;
+  margin: 0px 5px 0px 20px;
+  filter: drop-shadow(2px 2px 4px #222);
+}
+.logo span {
+  color: white;
 }
 .bar-btn {
   font-size: 25px;

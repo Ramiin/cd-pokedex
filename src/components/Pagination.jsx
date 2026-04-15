@@ -1,32 +1,26 @@
-import React from "react";
+import React from 'react';
 
 export default function Pgination(props) {
-  let isFirstPage = props.currentPage === 1 ? "disabled" : "";
+  let isFirstPage = props.currentPage === 1 ? 'disabled' : '';
   let isLastPage =
-    (props.currentPage === Math.ceil(props.totalPokemons / props.cardsInPage) || (props.currentPokemons==1))
-      ? "disabled"
-      : "";
+    props.currentPage === Math.ceil(props.totalPokemons / props.cardsInPage) ||
+    props.currentPokemons == 1
+      ? 'disabled'
+      : '';
 
   let { currentPage, setPagina } = props;
 
   function setActualPage(number) {
-    if(props.currentPokemons===1){
+    if (props.currentPokemons === 1) {
       //Nothing
-    }
-    else if(isNaN(number)){
+    } else if (isNaN(number)) {
       setPagina(1);
-    }
-    else if((number>=188)){
+    } else if (number >= 188) {
       setPagina(187);
-
-    }
-    else if ((number <= 0)) {
+    } else if (number <= 0) {
       setPagina(1);
-
-    }
-    else{
+    } else {
       setPagina(number);
-
     }
   }
 
@@ -43,7 +37,11 @@ export default function Pgination(props) {
           </a>
         </li>
         <li>
-          <input type="number" onChange={(e)=> setActualPage(parseInt(e.target.value))} placeholder={`${props.currentPage}/187`}/>
+          <input
+            type="number"
+            onChange={(e) => setActualPage(parseInt(e.target.value))}
+            placeholder={`${props.currentPage}/187`}
+          />
         </li>
 
         <li>

@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
-import PokeCard from "./PokeCard";
-import { useDispatch, useSelector } from "react-redux";
-import { clearUniquePokemon, setRandomPoke } from "../redux/slices/pokemons";
-import fingerPointing from "../utils/img/finger-pointing-down.gif";
+import React, { useEffect } from 'react';
+import PokeCard from './PokeCard';
+import { useDispatch, useSelector } from 'react-redux';
+import { clearUniquePokemon, setRandomPoke } from '../redux/slices/pokemons';
+import fingerPointing from '../utils/img/finger-pointing-down.gif';
 
 export default function LandingPage(props) {
   let dispatch = useDispatch();
@@ -17,7 +17,7 @@ export default function LandingPage(props) {
   if (uniquePokemon.name) {
     pokeDataToRender = {
       id: uniquePokemon.id,
-      image: uniquePokemon.sprites.other["official-artwork"].front_default,
+      image: uniquePokemon.sprites.other['official-artwork'].front_default,
       name: uniquePokemon.name,
       hp: uniquePokemon.stats[0].base_stat,
       experience: uniquePokemon.base_experience,
@@ -43,15 +43,11 @@ export default function LandingPage(props) {
       </div>
 
       <div className="container">
-        <h4 style={{ marginBottom: "0px", marginTop: "30px" }}>
+        <h4 style={{ marginBottom: '0px', marginTop: '30px' }}>
           Do you already know this pokemon?
         </h4>
         <img src={fingerPointing} alt="finger-pointing" height="50px" />
-        {pokeDataToRender?.name ? (
-          <PokeCard pokemon={pokeDataToRender} />
-        ) : (
-          "loading"
-        )}
+        {pokeDataToRender?.name ? <PokeCard pokemon={pokeDataToRender} /> : 'loading'}
       </div>
     </>
   );

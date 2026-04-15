@@ -1,18 +1,18 @@
-import { Route, Routes } from "react-router-dom";
-import NavigationBar from "./components/NavigationBar";
-import "./utils/css/Global.css";
-import "./utils/css/Global.css";
-import LandingPage from "./components/LandingPage";
-import PokeCard from "./components/PokeCard";
-import Home from "./components/Home";
-import Details from "./components/Details";
-import FloatButton from "./components/FloatButton";
-import About from "./components/About";
+import { Route, Routes } from 'react-router-dom';
+import NavigationBar from './components/NavigationBar';
+import './utils/css/Global.css';
+import './utils/css/Global.css';
+import LandingPage from './components/LandingPage';
+import PokeCard from './components/PokeCard';
+import Home from './components/Home';
+import Details from './components/Details';
+import FloatButton from './components/FloatButton';
+import About from './components/About';
 
 function App() {
   return (
     <>
-        <FloatButton />
+      <FloatButton />
       <div className="app-container">
         <NavigationBar />
         <div className="main-container">

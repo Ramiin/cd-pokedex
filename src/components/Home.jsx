@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import Searchbar from "./Searchbar";
-import { chargeAllPokemons, clearAllPokemons } from "../redux/slices/pokemons";
-import PokeCard from "./PokeCard";
-import Pagination from "./Pagination";
+import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import Searchbar from './Searchbar';
+import { chargeAllPokemons, clearAllPokemons } from '../redux/slices/pokemons';
+import PokeCard from './PokeCard';
+import Pagination from './Pagination';
 
 export default function Home() {
   let { allPokemon: currentPokemons } = useSelector((state) => state.pokemons);
@@ -11,15 +11,15 @@ export default function Home() {
   //PAGINATION VARS
   let [currentPage, setCurrentPage] = useState(1);
   let cardsInPage = 6;
-  let apiOffset = currentPage*cardsInPage;
+  let apiOffset = currentPage * cardsInPage;
   ////
 
-  let dispatch= useDispatch()
-  useEffect(() => {   
-      dispatch(clearAllPokemons())
-      dispatch(chargeAllPokemons(apiOffset===6 ? 0 : apiOffset, cardsInPage))
-  }, [dispatch, currentPage])
-///PAGINATION VARS
+  let dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(clearAllPokemons());
+    dispatch(chargeAllPokemons(apiOffset === 6 ? 0 : apiOffset, cardsInPage));
+  }, [dispatch, currentPage]);
+  ///PAGINATION VARS
   const lastIndex = currentPage * cardsInPage;
   const firstIndex = lastIndex - cardsInPage;
   const cardsShowed = (function () {
@@ -35,7 +35,7 @@ export default function Home() {
   return (
     <>
       <section className="container">
-        <Searchbar setPagina={setPagina}/>
+        <Searchbar setPagina={setPagina} />
       </section>
 
       <section>
@@ -52,7 +52,7 @@ export default function Home() {
         {currentPokemons?.map((el) => {
           let dataToRender = {
             id: el.id,
-            image: el.sprites.other["official-artwork"].front_default,
+            image: el.sprites.other['official-artwork'].front_default,
             name: el.name,
             hp: el.stats[0].base_stat,
             experience: el.base_experience,

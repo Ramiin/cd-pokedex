@@ -21,3 +21,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Planning and session artifacts — never commit
+docs/superpowers/
+.claude/
+*.plan.md

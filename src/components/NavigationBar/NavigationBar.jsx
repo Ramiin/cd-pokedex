@@ -1,28 +1,20 @@
 import { Link, NavLink } from 'react-router-dom';
-import '../utils/css/Global.css';
-import logo from '../utils/img/logo.png';
+import logo from '../../assets/images/logo.png';
 
-export default function First() {
-  // const NavLayout = () => (
-  //     <>
-  //       <NavigationBar />
-  //       <Outlet />
-  //     </>
-  //   );
-
+export default function NavigationBar() {
   return (
     <header>
       <nav>
-        <Link to="/">
+        <Link to="/" aria-label="Go to landing page">
           <div className="logo">
-            <img src={logo} alt="" />
+            <img src={logo} alt="Pokedex logo" />
             <h1>
               Poke<span>dex</span>
             </h1>
           </div>
         </Link>
-        <input type="checkbox" id="check" />
-        <label htmlFor="check" className="bar-btn">
+        <input type="checkbox" id="nav-toggle" className="nav-toggle" />
+        <label htmlFor="nav-toggle" className="bar-btn" aria-label="Toggle navigation menu">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             aria-hidden="true"
@@ -41,13 +33,13 @@ export default function First() {
 
         <ul className="nav-menu">
           <li>
-            <NavLink to="/"> Home</NavLink>
+            <NavLink to="/">Home</NavLink>
           </li>
           <li>
             <NavLink to="/home">Get started</NavLink>
           </li>
           <li>
-            <NavLink to="/about">About me</NavLink>
+            <NavLink to="/about">About</NavLink>
           </li>
         </ul>
       </nav>

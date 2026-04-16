@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import NavigationBar from './components/NavigationBar';
 import FloatButton from './components/FloatButton';
 import LandingPage from './pages/LandingPage';
@@ -21,6 +22,7 @@ export default function App() {
           </Routes>
         </div>
       </div>
+      <Analytics />
     </>
   );
 }
